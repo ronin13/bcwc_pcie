@@ -581,7 +581,7 @@ int fthd_isp_cmd_set_loadfile(struct fthd_private *dev_priv)
 	}
 
 	/* The set file is allowed to be missing but we don't get calibration */
-	ret = request_firmware(&fw, filename, &dev_priv->pdev->dev);
+	ret = request_firmware_direct(&fw, filename, &dev_priv->pdev->dev);
 	if (ret)
 		return 0;
 
